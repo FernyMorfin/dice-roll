@@ -1,0 +1,31 @@
+#dice roll
+
+import random
+
+def main():
+    p1,p2 = names()
+    winnername, p1roll, p2roll = rolldice(p1,p2)
+    display(winnername,p1roll,p2roll,p1,p2)
+
+def names():
+    p1name = input('player 1:')
+    p2name = input('player 2:')
+    return p1name, p2name
+
+def rolldice(p1,p2):
+    p1roll = random.randint (1, 6)
+    p2roll = random.randint (1, 6)
+    if p1 > p2:
+        winnername = p1
+    elif p1 < p2:
+        winnername = p2
+    else:
+        winnername = "tie"
+    return winnername, p1roll, p2roll
+
+def display(winnername,p1roll,p2roll,p1,p2):
+    print(f'({p1} rolled {p1roll})')
+    print(f'({p2} rolled {p2roll})')
+    print(f'(the winner is {winnername})!')
+
+main()
